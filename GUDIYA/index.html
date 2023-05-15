@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    <title>GUDIYA World</title>
+    <meta name="desciption" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div class="logo"><img src="logo.jpg" alt="logo"></div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+            <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="search.jpg"
+                    alt="search" onclick=slide()></div>
+            <a class="get-started" href="demo2.html">LETS DO IT</a>
+            <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+        </nav>
+        <div class="head-container">
+            <div class="quote">
+                <p>GUDIYA</p>
+                <p>Education is not meant to stop.</p>
+                <h5>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values,
+                    beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and
+                    directed research!</h5> <br>
+                <h3>Welcoming Young Minds....</h3>
+                <div class="play">
+                    <img src="Ytube.jpeg" alt="play"><span><a href="https://www.youtube.com/watch?v=Zu6o23Pu0Do"
+                            target="_blank">Watch Now</a></span>
+                </div>
+            </div>
+            <div class="svg-image">
+                <img src="head_main.png" alt="svg">
+            </div>
+        </div>
+        <div class="side-menu" id="side-menu">
+            <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+            <div class="user">
+                <img src="images/creator/roshan.jpeg" alt="Username">
+                <p>roshank9419</p>
+            </div>
+            <ul>
+                <li><a href="#about_section">About</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+                <li><a href="#feedBACK">Feedback</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- Some Popular Subjects -->
+    <div class="title">
+        <span>Our Learning Materials</span>
+    </div>
+    <br><br>
+    <div>
+        <center>
+            <div class="cbox">
+                <div class="det"><a href="subjects/jee.html"><img src="abc.jpg">Learn ABC</a>
+                </div>
+                <div class="det"><a href="subjects/gate.html"><img src="onetwo.jpg">Learn 123</a>
+                </div>
+                <div class="det"><a href="subjects/jee.html#sample_papers"><img src="rhymes.jpeg">Rhymes</a></div>
+                <div class="det"><a href="subjects/quiz.html"><img src="story.png">Moral Stories</a></div>
+            </div>
+        </center>
+        <div class="cbox">
+            <div class="det"><a href="subjects/computer_courses.html"><img src="colors1.jpeg">Fun with Colours</a></div>
+            <div class="det"><a href="subjects/computer_courses.html#data"><img src="body.jpeg">Our Body Parts</a></div>
+            <div class="det"><a href="subjects/computer_courses.html#algo"><img src="bird.jpeg">Birds</a></div>
+            <div class="det det-last"><a href="subjects/computer_courses.html#projects"><img src="fruits.jpeg">Fruits
+                </a></div>
+        </div>
+    </div>
+
+
+    <!-- ABOUT -->
+    <div class="diffSection" id="about_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px"> <strong>About</strong> </p>
+        </center>
+        <div class="about-content">
+            <div class="side-image">
+
+            </div>
+            <div class="side-text">
+                <h2>What you think about us ?</h2>
+                <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values,
+                    beliefs, and habits.
+                    Educational methods include teaching, training, storytelling, discussion and directed research. <br>
+                    <br>
+                    GUDIYA as the name suggest, is a friendly and easily accessible website for young children, whose
+                    minds are
+                    unprepared and ready to grasp the knowledge. This is a place where a child can learn new things
+                    while playing. <br>
+                    <br>
+                    Learning should never stop. Hence, we make sure to provide your kids with the best online materials,
+                    interesting
+                    visual, that will attract young minds and make them keen for knowledge.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PORTFOLIO -->
+    <div class="diffSection" id="portfolio_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px; padding-bottom: 40px;">Portfolio</p>
+        </center>
+        <div class="content">
+            <p>
+                “Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” “Your
+                attitude, not your aptitude, will determine your altitude.” “If you think education is expensive, try
+                ignorance.” “The only person who is educated is the one who has learned how to learn …and change.”
+            </p>
+        </div>
+    </div>
+    <div class="extra">
+        <p>We're increasing this data every year</p>
+        <div class="smbox">
+            <span>
+                <center>
+                    <div class="data">9288</div>
+                    <div class="det">Enrolled Students</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">35</div>
+                    <div class="det">Total Courses</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">890</div>
+                    <div class="det">Placed Students</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">70</div>
+                    <div class="det">Total Projects</div>
+                </center>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- TEAM -->
+    <div class="diffSection" id="team_section">
+        <center>
+            <p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">We're the Creators</p>
+        </center>
+        <div class="totalcard">
+            <div class="card">
+                <center><img src="ananya.jpg"></center>
+                <center>
+                    <div class="card-title">Ananya Priya</div>
+                    <div id="detail">
+                        <p>“ You can teach a student a lesson for a day; but if you can teach him to learn by creating
+                            curiosity, he will continue the learning process as long as he lives “</p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/ananya-priya-281674216/" target="_blank"><button
+                                class="btn-ananya">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+            <div class="card">
+                <center><img src="akshit.jpg"></center>
+                <center>
+                    <div class="card-title">Akshit Bahl</div>
+                    <div id="detail">
+                        <p>“ Real education should consist of drawing the goodness and the best out of our own students.
+                            What better books can there be than the book of humanity “</p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/akshit-bahl-586996184/" target="_blank"><button
+                                class="btn-akshit">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+            <div class="card">
+                <center><img src="nitya.jpg"></center>
+                <center>
+                    <div class="card-title">Nitya Agarwal</div>
+                    <div id="detail">
+                        <p>“ Our vision is to mould young minds into skilled spirits, and inculcate within them the
+                            keenness to know more. we provide you with the best for your child making learning fun. “
+                        </p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/nitya-agarwal-a698b2214/" target="_blank"><button
+                                class="btn-nitya">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SERVICES -->
+    <div class="service-swipe">
+        <div class="diffSection" id="services_section">
+            <center>
+                <p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Our Specialities</p>
+            </center>
+        </div>
+        <a href="subjects/computer_courses.html">
+            <div class="s-card">
+                <p>Attractive and informative learning materials </p>
+            </div>
+        </a>
+        <a href="subjects/jee.html">
+            <div class="s-card">
+                <p>24*7 online support </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="s-card">
+                <p>Google meet of kids from around the globe</p>
+            </div>
+        </a>
+        <a href="subjects/jee.html#sample_papers">
+            <div class="s-card">
+                <p>YouTube links for better learning </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="s-card">
+                <p>Online competitions </p>
+            </div>
+        </a>
+        <a href="#contactus_section">
+            <div class="s-card">
+                <p>Fun Learning</p>
+            </div>
+        </a>
+        <a href="subjects/quiz.html">
+            <div class="s-card">
+                <p>Interactive Quizzes</p>
+            </div>
+        </a>
+        <a href="#contactus_section">
+            <div class="s-card">
+                <p>Real Time Progress Updates</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Reviews by Parents -->
+    <div id="makeitfull">
+        <a href="#review_section"></a>
+    </div>
+    <div class="review">
+        <div class="diffSection" id="review_section">
+            <center>
+                <p style="font-size: 40px; font-weight: 900; padding: 100px; padding-bottom: 40px; color: #2E3D49;">What
+                    the Parents Say
+                    About Us?</p>
+            </center>
+        </div>
+        <div class="rev-container">
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="G.Vishwanathan.jpg">
+                    <p>G. Vishwanathan </p>
+                    <h6>Delhi</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        I really appreciate your efforts to make my ward study even in this kind of situation we are
+                        facing right now, and she also study very judiciously. We are happy that children’s taking this
+                        class seriously and I hope these classes will help students to get better results in even this
+                        kind of situation.
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="ushadevi.jpeg">
+                    <p>Usha Devi</p>
+                    <h6>Bhubhneshwar</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"> <strong>Review:</strong> </p>
+                    <p id="content">
+                        The teachers are good and dedicated, I will always be grateful to this wonderful school.”
+                        “Fantastic school! The teachers are Professional, caring and well organized. The admissions
+                        process was outstanding, they really care and truly want the best for your child.”
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="vijayanr.jpg">
+                    <p>Vijayan R</p>
+                    <h6>Vellore</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        "I am so pleased with how my child has progressed thank you." "Thank you for your help, my
+                        child is very happy." "My child always talks about school and the work he is doing; he is
+                        getting on really well." "Very good teachers and really helpful, my daughter has learnt a lot of
+                        things.
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="SenthilKumar.jpg">
+                    <p>Senthilkumar S</p>
+                    <h6>Chennai</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        4. My child has shown progress since the time he started learning from this platform. It is a
+                        place which imparts knowledge through fun loving activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT US -->
+    <div class="diffSection" id="contactus_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px">Contact Us</p>
+        </center>
+        <div class="csec"></div>
+        <div class="back-contact">
+            <div class="cc">
+                <form action="/contact" method="post" enctype="text/plain" name="ContactForm">
+                    <label>First Name <span class="imp">*</span></label>
+                    <label style="margin-left: 155px">Last Name
+                        <span class="imp">*</span></label><br>
+                    <center>
+                        <input type="text" name="fname" style="margin-right: 10px; width: 175px" required="required">
+                        <input type="text" name="lname" style="width: 165px" required="required"><br>
+                    </center>
+                    <label>Email <span class="imp">*</span></label><br>
+                    <input type="email" name="email" style="width: 100%" required="required"><br>
+                    <label>Message <span class="imp">*</span></label><br>
+                    <input type="text" name="message" style="width: 100%" required="required"><br>
+                    <label>Additional Details</label><br>   
+                    <textarea name="addtional"></textarea><br>
+                    <input type="submit" id="csubmit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Information -->
+    <marquee style="background: linear-gradient(to right, #f9d85f, #fcb125); margin-top: 50px;" direction="left"
+        onmouseover="this.stop()" onmouseout="this.start()" scrollamount="10">
+        <div class="marqu">“Education is the passport to the future, for tomorrow belongs to those who prepare for it
+            today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is
+            expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and
+            change.”</div>
+    </marquee>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="main-col">
+
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="facebook.png"></a>
+                    <a href="#"><img src="watsapp.jpeg"></a>
+                    <a href="#"><img src="insta.jpeg"></a>
+                    <a href="#"><img src="twitter.png"></a>
+                    <a href="#"><img src="linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2023 Created By Akshit Bahl, Ananya Priya, Nitya Agarwal All Rights
+                    Reserved. </p>
+                <br>
+                <p>Head Office - Katpadi, Vellore <br>Tamil Nadu-632014</p>
+                <br>
+                <p>+91-9643973760  
+                    +91-7645955906
+                    +91-6393677642<br>&nbsp;
+                    learnfromgudiya@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

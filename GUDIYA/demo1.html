@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+    <title>Login SignUp</title>
+    <link rel="stylesheet" type="text/css" href="loginStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+
+    <!-- It will redirect to the Home Page after submitting the form -->
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function () {
+                alert("Form submitted succesfully!");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #ffffff;">Log In</button>
+            <button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+        </div>
+
+        <form id="login" class="input-group" action="index.html">
+            <div class="inp">
+                <input type="text" id="email" class="input-field" placeholder="Username or Phone Number"
+                    style="width: 88%; border:none;" required="required">
+            </div>
+            <div class="inp">
+                <input type="password" id="password" class="input-field" placeholder="Password"
+                    style="width: 88%; border: none;" required="required">
+            </div>
+            <input type="checkbox" class="check-box">Remember Password
+            <button type="submit" class="submit-btn">Log In</button>
+        </form>
+
+
+        <div class="other" id="other">
+            <div class="instead">
+                <h3>or</h3>
+            </div>
+            <button class="connect" onclick="google()">
+                <img src="googlelogo.jpeg"><span>Sign in with Google</span>
+            </button>
+        </div>
+
+        <!-- Registration Form -->
+        <div ng-app="mainApp" ng-controller="studentController">
+            <form name="studentForm" class="input-group" id="register" novalidate>
+                <table border="0">
+                    <tr>
+                        <td>Enter Child's name:</td>
+                        <td><input name="firstname" type="text" class="input-field" ng-model="firstName" required>
+                            <span style="color:red" ng-show="studentForm.firstname.$dirty &&
+        studentForm.firstname.$invalid">
+                                <span ng-show="studentForm.firstname.$error.required">First Name
+                                    is required.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Parent's name: </td>
+                        <td><input name="lastname" type="text" class="input-field" ng-model="lastName" required>
+                            <span style="color:red" ng-show="studentForm.lastname.$dirty &&
+        studentForm.lastname.$invalid">
+                                <span ng-show="studentForm.lastname.$error.required">Last Name is
+                                    required.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td><input type="text" name="phnumber" class="input-field" ng-model="phnumber" ng-maxlength="10"
+                                required></td>
+
+                        <span style="color:red" ng-show="studentForm.phnumber.$dirty &&
+                        studentForm.phnumber.$invalid">
+                            <span ng-show="studentForm.phnumber.$error.required">Phone Number is required.</span>
+
+                            <span ng-show="studentForm.phnumber.$error.maxlength">Invalid Phone Number</span>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input name="email" type="email" class="input-field" ng-model="email" length="100" required>
+                            <span style="color:red" ng-show="studentForm.email.$dirty &&
+                            studentForm.email.$invalid">
+                                <span ng-show="studentForm.email.$error.required">Email is
+                                    required.</span>
+                                <span ng-show="studentForm.email.$error.email">Invalid email
+                                    address.</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="password" class="input-field" ng-model="password"
+                                ng-minlength="5" ng-maxlength="10" required>
+                            <span style="color:red" ng-show="studentForm.password.$dirty &&
+        studentForm.password.$invalid">
+                                <span ng-show="studentForm.password.$error.required">Password is required.</span>
+                                <span ng-show="studentForm.password.$error.minlength">Password is too short.</span>
+                                <span ng-show="studentForm.password.$error.maxlength">Password is too long.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td><input type="password" class="input-field" class="input-field"
+                                placeholder="Confirm Password" name="psame" required="required"></td>
+                    </tr>
+                    <div class="input-field">
+                        <tr>
+                            <td>Child's Gender</td>
+                            <td><input type="radio" name="gender" ng-model="gender" ng-value="Male" required>Male
+                                <input type="radio" name="gender" ng-model="gender" ng-value="Female" required>Female
+                            </td>
+                            <span ng-show="studentForm.$submitted || studentForm.gender.$dirty">
+
+                            </span>
+                        </tr>
+                    </div>
+                    <div class="input-field" id="ageselect">
+                        <tr>
+                            <td>Child's age</td>
+                            <td>
+                                <select name="age" id="age" ng-model="age" value="select" required>
+                                    <option value="" selected disabled hidden>Select age</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </div>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()"> I agree to the
+                            Terms &
+                            Conditions
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <button>Reset</button>
+                        </td>
+                        <td>
+                            <button ng-disabled="studentForm.firstname.$dirty &&
+         studentForm.firstname.$invalid || studentForm.lastname.$dirty &&
+         studentForm.lastname.$invalid || studentForm.email.$dirty &&
+         studentForm.email.$invalid" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+        var mainApp = angular.module("mainApp", []);
+        mainApp.controller('studentController', function ($scope) {
+            $scope.reset = function () {
+                $scope.firstName = "Gudiya";
+                $scope.lastName = "Akshit";
+                $scope.email = "learnfromgudiya@gmail.com";
+                $scope.password = "ABCabc123";
+                $scope.phnumber = "9087654321";
+
+            }
+            $scope.reset();
+        });
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

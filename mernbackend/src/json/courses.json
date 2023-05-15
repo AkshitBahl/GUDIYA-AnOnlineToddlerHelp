@@ -1,0 +1,142 @@
+{
+    "learn123": {
+        "start": "monday",
+        "details": [
+            {
+                "teacher": "Mr. Santhosh",
+                "price": 999,
+                "assignments": 2
+            },
+            {
+                "teacher": "Ms.Vandana",
+                "price": 859,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. Juliet",
+                "price": 1200,
+                "assignments": 3
+            }
+        ]
+    },
+    "stories": {
+        "start": "tuesday",
+        "details": [
+            {
+                "teacher": "Mr. Samarth",
+                "price": 320,
+                "assignments": 0
+            },
+            {
+                "teacher": "Ms. Alagirini",
+                "price": 859,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. Kanthi",
+                "price": 450,
+                "assignments": 3
+            }
+        ]
+    },
+    "learnABC": {
+        "start": "wednesday",
+        "details": [
+            {
+                "teacher": "Mr. Vellingiri",
+                "price": 999,
+                "assignments": 2
+            },
+            {
+                "teacher": "Ms. Pradeepa",
+                "price": 859,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. Sumathi",
+                "price": 1200,
+                "assignments": 0
+            }
+        ]
+    },
+    "picture painting": {
+        "start": "thursday",
+        "details": [
+            {
+                "teacher": "Mr. Akshit",
+                "price": 499,
+                "assignments": 2
+            },
+            {
+                "teacher": "Ms.Deepa",
+                "price": 859,
+                "assignments": 9
+            },
+            {
+                "teacher": "Mrs. Sakshi",
+                "price": 1250,
+                "assignments": 3
+            }
+        ]
+    },
+    "rhymes": {
+        "start": "friday",
+        "details": [
+            {
+                "teacher": "Mr. Kumaresan",
+                "price": 999,
+                "assignments": 2
+            },
+            {
+                "teacher": "Ms. Ananya",
+                "price": 1000,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. Nitya",
+                "price": 1200,
+                "assignments": 4
+            }
+        ]
+    },
+    "funwithcolours": {
+        "start": "saturday",
+        "details": [
+            {
+                "teacher": "Mr. Vijayan",
+                "price": 1500,
+                "assignments": 5
+            },
+            {
+                "teacher": "Ms.Shailendra",
+                "price": 859,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. Babita",
+                "price": 1200,
+                "assignments": 3
+            }
+        ]
+    },
+    "birdsandanimals": {
+        "start": "sunday",
+        "details": [
+            {
+                "teacher": "Mr. mohan",
+                "price": 559,
+                "assignments": 2
+            },
+            {
+                "teacher": "Ms.harini",
+                "price": 859,
+                "assignments": 0
+            },
+            {
+                "teacher": "Mrs. rosetta",
+                "price": 1200,
+                "assignments": 1
+            }
+        ]
+    }
+}

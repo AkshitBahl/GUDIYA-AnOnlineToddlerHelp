@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+    <title>GUDIYA World</title>
+    <meta name="desciption" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{!--
+    <link rel="stylesheet" type="text/css" href="style.css"> --}}
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: rgb(247, 238, 164);
+            /* font-family: 'Open Sans', sans-serif; */
+            font-family: 'Raleway', sans-serif;
+        }
+
+        header {
+            height: 90vh;
+            /* background: #000; */
+        }
+
+        a,
+        button {
+            float: left;
+            font-family: "Raleway", sans-serif;
+            font-weight: 500;
+            font-size: 25px;
+            color: #2E3D49;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .black {
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            top: 0;
+            position: fixed;
+            display: flex;
+            width: 100%;
+            z-index: 1000;
+            background: rgb(249, 232, 76);
+            justify-content: space-around;
+            transition: 1.5s;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 5px 15px;
+        }
+
+        nav ul li a {
+            padding: 2px 10px;
+            color: #2e2e2e;
+            cursor: pointer;
+            transition: .5s;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #000000;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .active {
+            color: #050505;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .srch {
+            padding: 5px 15px;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            /* background: #0066ff; */
+            border: 1px solid;
+            border-radius: 20px;
+        }
+
+        .srch img {
+            width: 35px;
+            cursor: pointer;
+        }
+
+        .srch .search {
+            /* padding: 2px 10px; */
+            outline: none;
+            border: none;
+            background: transparent;
+        }
+
+        .get-started {
+            margin-left: 40px;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            text-decoration: none;
+
+            transition: .5s;
+            background-color: #ffc800;
+            color: #000000;
+        }
+
+        .get-started:hover {
+            color: #2e2e2e;
+            background: #fff;
+        }
+
+        .logo img {
+            width: 180px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .head-container {
+            margin-top: 180px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .quote {
+            width: 700px;
+            margin-left: 150px;
+            transform: translateY(-50px);
+        }
+
+        .quote h5 {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #0009;
+            line-height: 34px;
+        }
+
+        .quote p:nth-child(1) {
+            font-size: 70px;
+            font-weight: 600;
+            color: #2e2e2e;
+        }
+
+        .quote p:nth-child(2) {
+            font-size: 40px;
+            font-weight: 400;
+            color: #2e2e2e;
+        }
+
+        .quote .play {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .quote .play img {
+            width: 45px;
+            cursor: pointer;
+            filter: drop-shadow(0 0 10px #0002);
+        }
+
+        .quote .play span a {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+
+        .svg-image img {
+            width: 700px;
+        }
+
+        /* SIDE MENU */
+        .menu {
+            cursor: pointer;
+            width: 25px;
+            display: none;
+        }
+
+        .side-menu {
+            width: 100%;
+            height: 100%;
+            background: #fdfd0d;
+            position: absolute;
+            top: 0;
+            transition: .8s;
+            z-index: 2000;
+            transform: translateX(-100%);
+        }
+
+        .side-menu ul {
+            margin-top: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* background: #FA4B37; */
+        }
+
+        .side-menu ul li {
+            list-style: none;
+            /* background: #009900; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-bottom: 1px solid #fff; */
+            /* padding: 10px 0px; */
+        }
+
+        .side-menu ul li:hover a {
+            background: #fff;
+            color: #fdfd0d;
+        }
+
+        .side-menu ul li a {
+            color: #FFF;
+            width: 100%;
+            font-size: 1em;
+            /* background: #2E3D49; */
+            text-decoration: none;
+            padding: 15px 0px;
+        }
+
+        .close img {
+            float: right;
+            width: 35px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        .user img {
+            width: 60px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            filter: drop-shadow(0 10px 20px #0004);
+            margin-right: 30px;
+            cursor: pointer;
+        }
+
+        .user p {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .user img,
+        .user p {
+            opacity: 1;
+        }
+
+        /*Common things in all sections*/
+        #about_section,
+        #portfolio_section,
+        #team_section,
+        #services_section,
+        #contactus_section {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            color: #181616;
+            position: relative;
+        }
+
+        .diffSection {
+            width: 100%;
+            /*position: relative;*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diffSection .content {
+            margin: 10px;
+            text-align: center;
+            padding: 10px 100px;
+            font-size: 1.1rem;
+        }
+
+        /*PORTFOLIO*/
+        .extra {
+            width: 100%;
+        }
+
+        .extra p {
+            padding: 30px;
+            padding-bottom: 150px;
+            font-size: 50px;
+            text-align: center;
+            color: #fff;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url("images/extra/b1.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Raleway', sans-serif;
+            z-index: -9;
+        }
+
+        .smbox {
+            display: flex;
+            flex-wrap: wrap;
+            transform: translateY(-100px);
+            justify-content: center;
+        }
+
+        .smbox span {
+            margin: 1%;
+            background: #fff;
+            box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(0, 0, 0, 0.3);
+            border-radius: 2px;
+            padding: 30px 50px;
+            cursor: pointer;
+        }
+
+        .smbox span:hover {
+            transform: scale(1.2);
+            transition: .4s ease;
+        }
+
+        .smbox .data {
+            font-size: 90px;
+            font-weight: 900;
+            color: #ffee00;
+            border-radius: 10px;
+            font-weight: 900;
+        }
+
+        .smbox .det {
+            font-size: 30px;
+            border-radius: 15px;
+            font-weight: 900;
+            color: #272529;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        /*Title*/
+        .title {
+            margin-top: 0px;
+
+            font-family: 'Raleway', sans-serif;
+            font-size: 30px;
+            font-weight: bolder;
+            text-align: center;
+            color: #2E3D49;
+        }
+
+        /*ABOUT*/
+        .about-content {
+            width: 100%;
+            margin-left: 100px;
+            position: relative;
+            justify-content: center;
+            flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-content .side-text {
+            width: 550px;
+            padding: 50px 40px;
+            background: #edf6af;
+            box-shadow: 2px 0 100px rgb(244, 147, 86);
+            border-radius: 5px;
+            text-align: justify;
+            line-height: 22px;
+            /* opacity: 1; */
+            transform: translateX(-100px);
+            transition: 1s ease-in-out;
+            border-radius: 50px;
+        }
+
+        .about-content .side-text-appear {
+            opacity: 1;
+            transform: translateX(20px);
+        }
+
+        .about-content .side-text h2 {
+            padding: 10px;
+        }
+
+        .about-content .side-text p {
+            padding: 10px;
+        }
+
+        .about-content .side-image img {
+            width: 90%;
+            border-radius: 5px;
+        }
+
+        .sideImage {
+            transform: translateX(100px);
+            opacity: 0;
+            transition: .8s ease-in-out;
+        }
+
+        .sideImage-appear {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        /*POPULAR SUBJECTS*/
+        .cbox {
+            position: relative;
+            width: 100%;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cbox .det {
+            width: 250px;
+            height: 75px;
+            border-radius: 15px;
+            margin: 10px;
+            background: #f7edaf;
+            cursor: pointer;
+        }
+
+        .cbox .det a {
+            justify-content: space-around;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #010000;
+            font-size: 17px;
+            font-weight: 800;
+            color: #000000;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+        }
+
+        .cbox .det a:hover {
+            background: linear-gradient(to right, #fff700, #ffff00);
+            color: rgb(0, 0, 0);
+        }
+
+        .cbox .det a:hover img {
+            filter: brightness(100);
+        }
+
+        .cbox img {
+            width: 40px;
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        /*TEAM SECTION*/
+        .totalcard {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .totalcard .card {
+            margin: 30px;
+            width: 300px;
+            border-radius: 10px;
+            background: #f2ebb9;
+        }
+
+        .totalcard .card {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4),
+                0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:nth-child(1) {
+            border-top: 5px solid green;
+        }
+
+        .card:nth-child(2) {
+            border-top: 5px solid rgb(255, 153, 0);
+        }
+
+        .card:nth-child(3) {
+            border-top: 5px solid rgb(60, 0, 255);
+        }
+
+        .card:nth-child(1):hover {
+            box-shadow: inset 0px 0px 10px rgba(0, 255, 0, 0.5),
+                1px 1px 30px rgba(0, 255, 0, 0.5);
+        }
+
+        .card:nth-child(2):hover {
+            box-shadow: inset 0px 0px 10px rgba(255, 153, 0, 0.5),
+                1px 1px 30px rgba(255, 183, 0, 0.5);
+        }
+
+        .card:nth-child(3):hover {
+            box-shadow: inset 0px 0px 10px rgba(0, 64, 255, 0.5),
+                1px 1px 30px rgba(0, 162, 255, 0.5);
+        }
+
+        .totalcard .card img {
+            width: 100px;
+            height: 100px;
+            margin-top: 5px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition-duration: .3s;
+        }
+
+        .totalcard .card img:hover {
+            transform: scale(2.5);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #detail p {
+            font-size: 15px;
+            line-height: 25px;
+            font-variant: small-caps;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 25px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+
+        #detail button {
+            outline: none;
+            border-radius: 10px;
+            border-style: none;
+            border: 1px solid black;
+            padding: 9px 25px;
+            cursor: pointer;
+            transition-duration: .4s;
+        }
+
+        #detail a {
+            bottom: 80px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            margin-left: 90px;
+            align-self: center;
+        }
+
+        .btn-ananya:hover {
+            background: rgba(0, 255, 0, 0.7);
+            color: #fff;
+        }
+
+        .btn-akshit:hover {
+            background: rgba(255, 200, 0, 0.5);
+            color: #fff;
+        }
+
+        .btn-nitya:hover {
+            background: rgba(0, 166, 255, 0.5);
+            color: #fff;
+        }
+
+        .card-title {
+            font-size: 17px;
+            color: #343A40;
+            padding: 20px;
+            font-weight: 700;
+        }
+
+        /*Service Section*/
+        /*Service Section*/
+        .service-swipe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url("images/extra/b3.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .service-swipe .s-card img {
+            width: 100px;
+        }
+
+        .service-swipe a {
+            padding: 0;
+            margin: 40px 10px;
+        }
+
+        .service-swipe .s-card {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+            width: 350px;
+            height: 200px;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05),
+                0 0 50px rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            cursor: pointer;
+            transition-duration: .5s;
+        }
+
+        .service-swipe .s-card p {
+            color: #f2f2f2;
+            font-size: 1.2em;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .service-swipe .s-card:hover {
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+            transform: translateY(-10px);
+        }
+
+        /*Contact Us Section*/
+        .csec {
+            background: linear-gradient(to right, #ffcc15, #ffea00);
+            background-attachment: fixed;
+            position: absolute;
+            width: 100%;
+            height: 250px;
+            top: 200px;
+            content: '';
+            transform-origin: top right;
+            transform: skewY(-10deg);
+            z-index: -1;
+        }
+
+        .back-contact {
+            margin-top: 0px;
+            transform: translateY(-50px);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .cc {
+            height: 400px;
+            width: 400px;
+            height: 500px;
+            border-radius: 10px;
+            justify-content: center;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+            background: #fff;
+        }
+
+        .cc form {
+            margin: 5%;
+            margin-top: 40px;
+            width: 90%;
+            height: 90%;
+        }
+
+        .cc form label {
+            position: absolute;
+            color: #2E3D49;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .cc form input {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            outline: none;
+            color: #2E3D49;
+            font-weight: 600;
+        }
+
+        .imp {
+            color: rgb(255, 196, 0);
+        }
+
+        form textarea {
+            width: 100%;
+            height: 100px;
+            box-shadow: inset 0 0 5px lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            outline: none;
+            color: #2E3D49;
+            font-weight: 600;
+            padding: 15px;
+        }
+
+        #csubmit {
+            margin-top: 20px;
+            background: linear-gradient(to right, #ffc800, #ffd000);
+            border-radius: 5px;
+            border-style: none;
+            outline: none;
+            width: 100%;
+            padding: 15px 25px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /*REVIEW SECTION*/
+        #makeitfull {
+            display: flex;
+            justify-content: center;
+            transform: translateY(35px);
+        }
+
+        #makeitfull img {
+            width: 50px;
+        }
+
+        .review {
+            background: #F8F8F8;
+            width: 100%;
+        }
+
+        .rev-container {
+            padding: 10px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .rev-container .rev-card {
+            /*overflow: hidden;*/
+            width: 550px;
+            height: 240px;
+            margin-bottom: 40px;
+            background: #fff;
+            display: flex;
+            padding: 10px;
+            box-shadow: 2px 2px 20px rgba(246, 175, 8, 0.2);
+        }
+
+        .rev-card:hover {
+            box-shadow: 19px 19px 15px rgba(243, 171, 4, 0.2);
+        }
+
+        .identity {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .identity img {
+            width: 120px;
+            height: 120px;
+            transition-duration: .8s;
+            border-radius: 50%;
+        }
+
+        .identity img:hover {
+            transform: scale(2.2);
+            border-radius: 0px;
+            box-shadow: 0 0 50px rgba(255, 191, 0, 0.3);
+        }
+
+        .identity p {
+            width: 150px;
+            font-weight: 900;
+            color: #2E3D49;
+            text-align: center;
+        }
+
+        .identity h6 {
+            width: 150px;
+            text-align: center;
+        }
+
+        .identity .rating img {
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+        }
+
+        .rev-cont {
+            overflow: hidden;
+        }
+
+        .rev-cont #title {
+            padding: 10px;
+            color: #2E3D49;
+            font-weight: bold;
+        }
+
+        .rev-cont #content {
+            padding: 10px;
+            font-size: .9em;
+            font-weight: 700;
+            color: #000000;
+            line-height: 22px;
+            text-align: justify;
+        }
+
+
+        /*FEEDBACK*/
+        .title2 {
+            position: relative;
+            margin-top: 150px;
+            margin-left: 100px;
+        }
+
+        .title2 span {
+            font-weight: 700;
+            font-family: 'Raleway', sans-serif;
+            font-size: 30px;
+            color: #2E3D49;
+        }
+
+        .title2 .shortdesc2 {
+            padding: 10px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            color: #2E3D49;
+            margin-bottom: 10px;
+        }
+
+        .feedbox {
+            margin-top: 50px;
+            width: 100%;
+            display: flex;
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url("images/extra/b4.jpg");
+            background-size: cover;
+            padding: 50px 80px;
+            background-attachment: fixed;
+        }
+
+        .feed {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            border-radius: 10px;
+            justify-content: center;
+            box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.6),
+                0 0 80px rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .feed form {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .feed form label {
+            position: absolute;
+            color: #f2f2f2;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .feed form input,
+        .feed textarea {
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            outline: none;
+            color: #2E3D49;
+            background: #fff9;
+            font-weight: 600;
+        }
+
+        .feed form input {
+            margin-bottom: 15px;
+            width: 50%;
+        }
+
+        .feed form .fname {
+            width: 25%;
+        }
+
+        .feed form textarea {
+            width: 100%;
+            height: 100px;
+        }
+
+        .feed #csubmit {
+            margin-top: 25px;
+            background: linear-gradient(to right, #ffda06, #ffcb2d);
+            border-radius: 5px;
+            border-style: none;
+            outline: none;
+            width: 100%;
+            padding: 15px 25px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /*SCROLLING TEXT*/
+        .marqu {
+            text-align: center;
+            justify-content: center;
+            color: #000000;
+            font-size: 20px;
+            font-weight: 800;
+            padding: 10px;
+        }
+
+        /*FOOTER*/
+        footer {
+            color: #ffffff;
+            background: rgba(43, 40, 1, 0.867);
+            padding: 50px 0;
+        }
+
+        footer .footer-container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+        }
+
+        footer .social-media img {
+            width: 22px;
+        }
+
+        footer .logo {
+            width: 180px;
+            color: #fff;
+        }
+
+        footer .social-media a {
+            margin-right: 10px;
+            font-size: 22px;
+            text-decoration: none;
+        }
+
+        footer .right-col h1 {
+            font-size: 26px;
+        }
+
+        footer .border {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #ffff00, #ffe100);
+            margin: 2px;
+        }
+
+
+        footer input::placeholder {
+            color: white !important;
+        }
+
+        footer .txtb {
+            flex: 1;
+            padding: 18px 40px;
+            font-size: 16px;
+            background: #343A40;
+            border: none;
+            font-weight: 700;
+            outline: none;
+            border-radius: 5px;
+            min-width: 260px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        footer .btn {
+            margin-top: 20px;
+            padding: 18px 40px;
+            font-size: 16px;
+            color: #f1f1f1;
+            background: linear-gradient(to right, #d3b000, #d3b000);
+            border: none;
+            font-weight: 700;
+            outline: none;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: opacity .3s linear;
+        }
+
+        footer .btn:hover {
+            opacity: .7;
+        }
+
+        /*PROPERTIES FOR MAKING WEBSITE RESPONSIVE*/
+        @media screen and (max-width: 960px) {
+            .footer-container {
+                max-width: 600px;
+            }
+
+            .left-col {
+                width: 100%;
+                text-align: center;
+            }
+
+            .social-media {
+                display: flex;
+                justify-content: center;
+            }
+
+            .logo {
+                transition: 1s;
+                margin-left: 30%;
+            }
+
+            nav ul,
+            .srch,
+            .get-started {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            nav {
+                padding-bottom: 20px;
+                border-bottom: 1px solid #0005;
+                /* position: fixed; */
+                /* top: 0; */
+            }
+
+            .quote p,
+            .quote h5,
+            .play {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .quote p {
+                font-size: 30px;
+            }
+
+            .service-container .right-side img {
+                width: 90%;
+            }
+
+            .title {
+                margin-top: 0px;
+            }
+
+        }
+
+        @media screen and (max-width: 700px) {
+            footer .btn {
+                margin: 0;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .svg-image img {
+                width: 90%;
+                margin: 20px;
+                /* align-self: center; */
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            .feedbox form input,
+            .feedbox form .fname {
+                width: 100%;
+            }
+        }
+
+        #ajaxjson {
+            width: 2000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Raleway', sans-serif;
+            font-size: 3rem;
+            border: 1px solid rgb(73, 3, 3);
+
+
+        }
+
+        #go {
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(255, 221, 0);
+        }
+
+        #searchbarjson {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            margin-left: 400px;
+            padding: 5px;
+        }
+
+        #results {
+            margin: 30px auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: 1px solid brown;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+    </style>
+    {{!--
+    <script type="text/javascript" src="script.js"></script> --}}
+    <script>
+
+        function req() {
+            var pathjson = "courses.json";
+            var ajax1 = new XMLHttpRequest();
+            var noass = document.getElementById("assignment").checked;
+            var weekday = document.getElementById("weekday").value;
+            var course = document.getElementById("course").value;
+            var div = document.getElementById("results");
+
+            div.innerHTML = "";
+
+            ajax1.onreadystatechange = function () {
+                if (ajax1.readyState == 4) {
+                    try {
+                        var ajaxtext = JSON.parse(ajax1.responseText);
+                        console.log(ajaxtext);
+
+                    } catch (err) {
+                        // SyntaxError: Unexpected end of JSON input
+                        console.log('error', err);
+                    }
+                    alert(ajaxtext);
+
+                    var title = document.createElement("h1");
+                    title.textContent = "Starting Weekday from  " + weekday + " Available Courses " + course;
+                    div.appendChild(title);
+
+                    var myAjax = ajaxtext[course];
+
+                    for (var i = 0; i < myAjax["details"].length; i++) {
+                        var detail = myAjax["details"][i];
+
+                        if (detail["assignments"] == 0 || !noass) {
+                            var p = document.createElement("p");
+                            p.textContent = "Teacher name: " + detail["teacher"] + " , with course price " + detail["price"] + ", having " + detail["assignments"]
+                                + " assignments.";
+
+                            if (detail["price"] < 1000) {
+                                p.style.fontWeight = "bold";
+                            }
+
+                            div.appendChild(p);
+                        }
+                    }
+                }
+            }
+
+            ajax1.open("GET", pathjson, true);
+            ajax1.send();
+        }
+
+
+        function scrollAppear() {
+            var introText = document.querySelector('.side-text');
+            var sideImage = document.querySelector('.sideImage');
+            var introPosition = introText.getBoundingClientRect().top;
+            var imagePosition = sideImage.getBoundingClientRect().top;
+
+            var screenPosition = window.innerHeight / 1.2;
+
+            if (introPosition < screenPosition) {
+                introText.classList.add('side-text-appear');
+            }
+            if (imagePosition < screenPosition) {
+                sideImage.classList.add('sideImage-appear');
+            }
+        }
+
+        window.addEventListener('scroll', scrollAppear);
+
+        // For switching between navigation menus in mobile mode
+        var i = 2;
+        function switchTAB() {
+            var x = document.getElementById("list-switch");
+            if (i % 2 == 0) {
+                document.getElementById("list-switch").style = "display: grid; height: 50vh; margin-left: 5%;";
+                document.getElementById("search-switch").style = "display: block; margin-left: 5%;";
+            } else {
+                document.getElementById("list-switch").style = "display: none;";
+                document.getElementById("search-switch").style = "display: none;";
+            }
+            i++;
+        }
+
+        // For LOGIN
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+        var a = document.getElementById("log");
+        var b = document.getElementById("reg");
+        var w = document.getElementById("other");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+            w.style.visibility = "hidden";
+            b.style.color = "#fff";
+            a.style.color = "#000";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+            w.style.visibility = "visible";
+            a.style.color = "#fff";
+            b.style.color = "#000";
+        }
+
+        // CheckBox Function
+        function goFurther() {
+            if (document.getElementById("chkAgree").checked == true) {
+                document.getElementById('btnSubmit').style = 'background: linear-gradient(to right, #FA4B37, #DF2771);';
+            }
+            else {
+                document.getElementById('btnSubmit').style = 'background: lightgray;';
+            }
+        }
+
+        function google() {
+            window.location.assign("https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue&csig=AF-SEnbZHbi77CbAiuHE%3A1585466693&flowName=GlifWebSignIn&flowEntry=AddSession", "_blank");
+        }
+
+        // QUIZ Page
+        function quizt(frame) {
+            document.getElementById('f1').style = 'display: none;';
+            document.getElementById('f2').style = 'display: none;';
+            document.getElementById('f3').style = 'display: none;';
+            document.getElementById('f4').style = 'display: none;';
+            document.getElementById('f5').style = 'display: none;';
+            document.getElementById('f6').style = 'display: none;';
+            document.getElementById('f7').style = 'display: none;';
+            document.getElementById('f8').style = 'display: none;';
+            document.getElementById('f9').style = 'display: none;';
+            document.getElementById('f10').style = 'display: none;';
+            document.getElementById('f11').style = 'display: none;';
+            if (frame == 1) document.getElementById('f1').style = 'display: block';
+            else if (frame == 2) document.getElementById('f2').style = 'display: block';
+            else if (frame == 3) document.getElementById('f3').style = 'display: block';
+            else if (frame == 4) document.getElementById('f4').style = 'display: block';
+            else if (frame == 5) document.getElementById('f5').style = 'display: block';
+            else if (frame == 6) document.getElementById('f6').style = 'display: block';
+            else if (frame == 7) document.getElementById('f7').style = 'display: block';
+            else if (frame == 8) document.getElementById('f8').style = 'display: block';
+            else if (frame == 9) document.getElementById('f9').style = 'display: block';
+            else if (frame == 10) document.getElementById('f10').style = 'display: block';
+            else if (frame == 11) document.getElementById('f11').style = 'display: block';
+            else alert('error');
+        }
+
+        function startquiz() {
+            document.getElementById('title').style = 'display: none;';
+
+            document.getElementById('panel').style = 'display: inline-flex;';
+            document.getElementById('left').style = 'display: block;';
+            document.getElementById('right').style = 'display: block;';
+        }
+        function searchdisplay() {
+            document.getElementById('searchpanel').style.display = "block";
+        }
+
+        function display(n) {
+            var img1 = document.getElementById('img1');
+            var img2 = document.getElementById('img2');
+            var img3 = document.getElementById('img3');
+            var img4 = document.getElementById('img4');
+            var s1 = document.getElementById('s1');
+            var s2 = document.getElementById('s2');
+            var s3 = document.getElementById('s3');
+            var s4 = document.getElementById('s4');
+
+            img1.style = 'display: none;';
+            img2.style = 'display: none;';
+            img3.style = 'display: none;';
+            img4.style = 'display: none;';
+            s1.style = 'background: #DF2771; color: #FFF;';
+            s2.style = 'background: #DF2771; color: #FFF;';
+            s3.style = 'background: #DF2771; color: #FFF;';
+            s4.style = 'background: #DF2771; color: #FFF;';
+
+            if (n == 1) {
+                img1.style = 'display: block;';
+                s1.style = 'background: #E5E8EF; color: #DF2771;';
+            }
+            if (n == 2) {
+                img2.style = 'display: block;';
+                s2.style = 'background: #E5E8EF; color: #DF2771;';
+            }
+            if (n == 3) {
+                img3.style = 'display: block;';
+                s3.style = 'background: #E5E8EF; color: #DF2771;';
+            }
+            if (n == 4) {
+                img4.style = 'display: block;';
+                s4.style = 'background: #E5E8EF; color: #DF2771;';
+            }
+        }
+
+
+        function sideMenu(side) {
+            var menu = document.getElementById('side-menu');
+            if (side == 0) {
+                menu.style = 'transform: translateX(0vh); position:fixed;';
+            }
+            else {
+                menu.style = 'transform: translateX(-100%);';
+            }
+            side++;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div class="logo"><img src="logo.jpg" alt="logo"></div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+            <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="search.jpg"
+                    alt="search" onclick=slide()></div>
+            <a class="get-started" href="/login">LETS DO IT</a>
+            <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+        </nav>
+        <div class="head-container">
+            <div class="quote">
+                <p>GUDIYA</p>
+                <p>Education is not meant to stop.</p>
+                <h5>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values,
+                    beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and
+                    directed research!</h5> <br>
+                <h3>Welcoming Young Minds....</h3>
+                <div class="play">
+                    <img src="Ytube.jpeg" alt="play"><span><a href="https://www.youtube.com/watch?v=Zu6o23Pu0Do"
+                            target="_blank">Watch Now</a></span>
+                </div>
+            </div>
+            <div class="svg-image">
+                <img src="head_main.png" alt="svg">
+            </div>
+        </div>
+        <div class="side-menu" id="side-menu">
+            <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+            <div class="user">
+                <img src="" alt="Username">
+                <p>AkshitBahl- 21BIT0012</p>
+            </div>
+            <ul>
+                <li><a href="#about_section">About</a></li>
+                <li><a href="#portfolio_section">Portfolio</a></li>
+                <li><a href="#team_section">Team</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+                <li><a href="#feedBACK">Feedback</a></li>
+            </ul>
+        </div>
+
+        {{!-- AJAX with JSON search courses with teachers --}}
+        <div id="ajaxjson">
+            <div id="searchbarjson">
+                <label>Weekday: <input type="text" id="weekday" /></label>
+                <label>Course Name: <input type="text" id="course" /></label>
+                <label>Assignments <input type="checkbox" id="assignment"></label>
+                <button id="go" onclick="req()">Go!</button>
+            </div>
+            <div id="results">
+                <h1></h1>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+    <!-- Some Popular Subjects -->
+    <div class="title">
+        <span>Our Learning Materials</span>
+    </div>
+    <br><br>
+    <div>
+        <center>
+            <div class="cbox">
+                <div class="det"><a href="https://www.youtube.com/watch?v=71h8MZshGSs"><img src="abc.jpg">Learn ABC</a>
+                </div>
+                <div class="det"><a href="https://www.youtube.com/watch?v=fHqjNHxmB7c"><img src="onetwo.jpg">Learn
+                        123</a>
+                </div>
+                <div class="det"><a href="https://www.youtube.com/watch?v=w3dn5sbvypY"><img src="rhymes.jpeg">Rhymes</a>
+                </div>
+                <div class="det"><a
+                        href="https://www.youtube.com/results?search_query=moral+stories+english+for+kids"><img
+                            src="story.png">Moral Stories</a></div>
+            </div>
+        </center>
+        <div class="cbox">
+            <div class="det"><a href="https://www.youtube.com/watch?v=tkpfg-1FJLU"><img src="colors1.jpeg">Fun with
+                    Colours</a></div>
+            <div class="det"><a href="https://www.youtube.com/watch?v=h4eueDYPTIg"><img src="body.jpeg">Our Body
+                    Parts</a></div>
+            <div class="det"><a
+                    href=" https://www.youtube.com/results?sp=mAEB&search_query=birds+and+animals+for+kids"><img
+                        src="bird.jpeg">Birds</a></div>
+            <div class="det det-last"><a href="https://www.youtube.com/watch?v=mbPNkDEN3Ps "><img
+                        src="fruits.jpeg">Fruits
+                </a></div>
+        </div>
+    </div>
+
+
+    <!-- ABOUT -->
+    <div class="diffSection" id="about_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px"> <strong>About</strong> </p>
+        </center>
+        <div class="about-content">
+            <div class="side-image">
+
+            </div>
+            <div class="side-text">
+                <h2>What you think about us ?</h2>
+                <p>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values,
+                    beliefs, and habits.
+                    Educational methods include teaching, training, storytelling, discussion and directed research. <br>
+                    <br>
+                    GUDIYA as the name suggest, is a friendly and easily accessible website for young children, whose
+                    minds are
+                    unprepared and ready to grasp the knowledge. This is a place where a child can learn new things
+                    while playing. <br>
+                    <br>
+                    Learning should never stop. Hence, we make sure to provide your kids with the best online materials,
+                    interesting
+                    visual, that will attract young minds and make them keen for knowledge.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PORTFOLIO -->
+    <div class="diffSection" id="portfolio_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px; padding-bottom: 40px;">Portfolio</p>
+        </center>
+        <div class="content">
+            <p>
+                “Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” “Your
+                attitude, not your aptitude, will determine your altitude.” “If you think education is expensive, try
+                ignorance.” “The only person who is educated is the one who has learned how to learn …and change.”
+            </p>
+        </div>
+    </div>
+    <div class="extra">
+        <p>We're increasing this data every year</p>
+        <div class="smbox">
+            <span>
+                <center>
+                    <div class="data">9288</div>
+                    <div class="det">Enrolled Students</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">35</div>
+                    <div class="det">Total Courses</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">890</div>
+                    <div class="det">Placed Students</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data">70</div>
+                    <div class="det">Total Projects</div>
+                </center>
+            </span>
+        </div>
+    </div>
+
+
+    <!-- TEAM -->
+    <div class="diffSection" id="team_section">
+        <center>
+            <p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px;">We're the Creators</p>
+        </center>
+        <div class="totalcard">
+            <div class="card">
+                <center><img src="ananya.jpg"></center>
+                <center>
+                    <div class="card-title">Ananya Priya</div>
+                    <div id="detail">
+                        <p>“ You can teach a student a lesson for a day; but if you can teach him to learn by creating
+                            curiosity, he will continue the learning process as long as he lives “</p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/ananya-priya-281674216/" target="_blank"><button
+                                class="btn-ananya">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+            <div class="card">
+                <center><img src="akshit.jpg"></center>
+                <center>
+                    <div class="card-title">Akshit Bahl</div>
+                    <div id="detail">
+                        <p>“ Real education should consist of drawing the goodness and the best out of our own students.
+                            What better books can there be than the book of humanity “</p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/akshit-bahl-586996184/" target="_blank"><button
+                                class="btn-akshit">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+            <div class="card">
+                <center><img src="nitya.jpg"></center>
+                <center>
+                    <div class="card-title">Nitya Agarwal</div>
+                    <div id="detail">
+                        <p>“ Our vision is to mould young minds into skilled spirits, and inculcate within them the
+                            keenness to know more. we provide you with the best for your child making learning fun. “
+                        </p>
+                        <div class="duty"></div>
+                        <a href="https://www.linkedin.com/in/nitya-agarwal-a698b2214/" target="_blank"><button
+                                class="btn-nitya">Follow +</button></a>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SERVICES -->
+    <div class="service-swipe">
+        <div class="diffSection" id="services_section">
+            <center>
+                <p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;">Our Specialities</p>
+            </center>
+        </div>
+        <a href="subjects/computer_courses.html">
+            <div class="s-card">
+                <p>Attractive and informative learning materials </p>
+            </div>
+        </a>
+        <a href="subjects/jee.html">
+            <div class="s-card">
+                <p>24*7 online support </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="s-card">
+                <p>Google meet of kids from around the globe</p>
+            </div>
+        </a>
+        <a href="subjects/jee.html#sample_papers">
+            <div class="s-card">
+                <p>YouTube links for better learning </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="s-card">
+                <p>Online competitions </p>
+            </div>
+        </a>
+        <a href="#contactus_section">
+            <div class="s-card">
+                <p>Fun Learning</p>
+            </div>
+        </a>
+        <a href="subjects/quiz.html">
+            <div class="s-card">
+                <p>Interactive Quizzes</p>
+            </div>
+        </a>
+        <a href="#contactus_section">
+            <div class="s-card">
+                <p>Real Time Progress Updates</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- Reviews by Parents -->
+    <div id="makeitfull">
+        <a href="#review_section"></a>
+    </div>
+    <div class="review">
+        <div class="diffSection" id="review_section">
+            <center>
+                <p style="font-size: 40px; font-weight: 900; padding: 100px; padding-bottom: 40px; color: #2E3D49;">What
+                    the Parents Say
+                    About Us?</p>
+            </center>
+        </div>
+        <div class="rev-container">
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="G.Vishwanathan.jpg">
+                    <p>G. Vishwanathan </p>
+                    <h6>Delhi</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        I really appreciate your efforts to make my ward study even in this kind of situation we are
+                        facing right now, and she also study very judiciously. We are happy that children’s taking this
+                        class seriously and I hope these classes will help students to get better results in even this
+                        kind of situation.
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="ushadevi.jpeg">
+                    <p>Usha Devi</p>
+                    <h6>Bhubhneshwar</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"> <strong>Review:</strong> </p>
+                    <p id="content">
+                        The teachers are good and dedicated, I will always be grateful to this wonderful school.”
+                        “Fantastic school! The teachers are Professional, caring and well organized. The admissions
+                        process was outstanding, they really care and truly want the best for your child.”
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="vijayanr.jpg">
+                    <p>Vijayan R</p>
+                    <h6>Vellore</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        "I am so pleased with how my child has progressed thank you." "Thank you for your help, my
+                        child is very happy." "My child always talks about school and the work he is doing; he is
+                        getting on really well." "Very good teachers and really helpful, my daughter has learnt a lot of
+                        things.
+                    </p>
+                </div>
+            </div>
+            <div class="rev-card">
+                <div class="identity">
+                    <img src="SenthilKumar.jpg">
+                    <p>Senthilkumar S</p>
+                    <h6>Chennai</h6>
+                    <div class="rating"><img src="images/icon/star.png"><img src="images/icon/star.png"><img
+                            src="images/icon/star.png"><img src="images/icon/star.png"><img src="images/icon/star.png">
+                    </div>
+                </div>
+                <div class="rev-cont">
+                    <p id="title"><strong>Review:</strong></p>
+                    <p id="content">
+                        4. My child has shown progress since the time he started learning from this platform. It is a
+                        place which imparts knowledge through fun loving activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT US -->
+    <div class="diffSection" id="contactus_section">
+        <center>
+            <p style="font-size: 50px; padding: 100px">Contact Us</p>
+        </center>
+        <div class="csec"></div>
+        <div class="back-contact">
+            <div class="cc">
+                <form action="/contact" method="post" enctype="text/plain" name="ContactForm">
+                    <label>First Name <span class="imp">*</span></label>
+                    <label style="margin-left: 155px">Last Name
+                        <span class="imp">*</span></label><br>
+                    <center>
+                        <input type="text" name="fname" style="margin-right: 10px; width: 175px" required="required">
+                        <input type="text" name="lname" style="width: 165px" required="required"><br>
+                    </center>
+                    <label>Email <span class="imp">*</span></label><br>
+                    <input type="email" name="email" style="width: 100%" required="required"><br>
+                    <label>Message <span class="imp">*</span></label><br>
+                    <input type="text" name="message" style="width: 100%" required="required"><br>
+                    <label>Additional Details</label><br>
+                    <textarea name="addtional"></textarea><br>
+                    <input type="submit" id="csubmit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Information -->
+    <marquee style="background: linear-gradient(to right, #f9d85f, #fcb125); margin-top: 50px;" direction="left"
+        onmouseover="this.stop()" onmouseout="this.start()" scrollamount="10">
+        <div class="marqu">“Education is the passport to the future, for tomorrow belongs to those who prepare for it
+            today.” “Your attitude, not your aptitude, will determine your altitude.” “If you think education is
+            expensive, try ignorance.” “The only person who is educated is the one who has learned how to learn …and
+            change.”</div>
+    </marquee>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="main-col">
+
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="facebook.png"></a>
+                    <a href="#"><img src="watsapp.jpeg"></a>
+                    <a href="#"><img src="insta.jpeg"></a>
+                    <a href="#"><img src="twitter.png"></a>
+                    <a href="#"><img src="linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2023 Created By Akshit Bahl, Ananya Priya, Nitya Agarwal All Rights
+                    Reserved. </p>
+                <br>
+                <p>Head Office - Katpadi, Vellore <br>Tamil Nadu-632014</p>
+                <br>
+                <p>+91-9643973760
+                    +91-7645955906
+                    +91-6393677642<br>&nbsp;
+                    learnfromgudiya@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

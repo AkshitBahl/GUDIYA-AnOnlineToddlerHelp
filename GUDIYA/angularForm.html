@@ -1,0 +1,102 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>webtech</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+</head>
+
+<body>
+	<div ng-app="myApp" ng-controller="myctrl">
+		<table>
+			<form name="myForm">
+				<tr>
+					<td><label>Name</label></td>
+					<td><input type="text" name="name" ng-model="name"></td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input type="text" name="email" ng-model="email"></td>
+				</tr>
+				<tr>
+					<td><label>Phone Number</label></td>
+					<td><input type="text" name="phnumber" ng-model="phnumber"></td>
+				</tr>
+				<tr>
+					<td><label>budget</label></td>
+					<td><input type="text" name="budget" ng-model="budget"></td>
+				</tr>
+				<tr>
+					<td><label>What is this about</label></td>
+					<td><textarea name="about" ng-model="about"></textarea></td>
+				</tr>
+				<tr>
+					<td><label>SEO</label></td>
+					<td><input type="text" name="seo" ng-model="seo"></td>
+				</tr>
+				<tr>
+					<td><label>Hosting</label></td>
+					<td>
+						<input type="radio" name="hosting" value="Yes" ng-model="hosting">
+						<label>Yes</label>
+					</td>
+					<td>
+						<input type="radio" name="hosting" value="No" ng-model="hosting">
+						<label>No</label>
+					</td>
+				</tr>
+				<tr>
+					<td><button type="submit" ng-click="checkValidationOnClick()">Submit</button></td>
+				</tr>
+			</form>
+		</table>
+		<script>
+			var app = angular.module("myApp", []);
+			app.controller("myctrl", function ($scope) {
+				$scope.name = "";
+				$scope.email = "";
+				$scope.phnumber = 0;
+				$scope.budget = 0;
+				$scope.about = "";
+				$scope.seo = "";
+				$scope.hosting = "";
+				$scope.checkValidationOnClick = function () {
+					var flag = 0;
+					if ($scope.name == "" || $scope.email == "" || $scope.phnumber == "" || $scope.budget ==
+						"" || $scope.about == "" || $scope.seo == "" || $scope.hosting == "") {
+						alert("All fields are mandatory and have to be entered");
+						return false;
+						flag = 1;
+					}
+					var letters = /^[a-zA-Z _ ]*$/;
+					if (!$scope.name.match(letters)) {
+						alert("Name fields should contain only alphabets");
+						return false;
+						flag = 1;
+					}
+					var check = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+					if (!$scope.email.match(check)) {
+						alert("Enter valid email id");
+						return false;
+						flag = 1;
+					}
+					var numbers = /^[0-9]*$/;
+					if (!$scope.phnumber.match(numbers)) {
+						alert("ENter only numbers in phone number field");
+						return false;
+						flag = 1;
+					}
+					var decimalCheck = /^\d+(\.\d{1,2})?$/;
+					if (!$scope.budget.match(decimalCheck)) {
+						alert("Budget should have a maximum of 2 decimal fields");
+						return false;
+						flag = 1;
+					}
+					
+				}
+			})
+		</script>
+</body>
+
+</html>
